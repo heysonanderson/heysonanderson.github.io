@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Обо мне</title>
+</head>
+<body>
+    <div class="topbg"></div>
+    <div class="wrapper">
+        <header class="header">
+            
+            <div id="header__inner">
+                <div class="menu-l">
+                    <div class="logobox">
+                        <a href="index.html">
+                            <h1 class="logo">YaSinHi</h1>
+                        </a>
+                    </div>
+                    
+                    <nav class="menu">
+                        <ul class="list_menu">
+                            
+                            <li class="list_menu-item"> 
+                                <a class="nav" href="Portfo-lio.html">Портфолио</a> 
+                            </li>
+                            
+                            <li class="list_menu-item">
+                                <a class="nav" href="About-me.html">Обо мне</a>    
+                            </li>
+                            
+                            <li class="list_menu-item">
+                                <a class="nav" href="Pri-ces.html">Цены</a>
+                            </li>
+                            
+                            <li class="list_menu-item">
+                                <a class="nav" href="#" onclick="openModalBox()">
+                                    написать
+                                </a>
+                            </li>    
+                                                        
+                        </ul>
+
+                    </nav>
+                </div>
+
+                <div class="menu-r">
+                    <a class="button calc black" href="#">
+                        калькулятор сайта
+                    </a>
+                        
+
+                    <a class="telegram-link black" href="#">
+                        <img class="telegram-img" src="/KURSACH/imgs/telegram-alt-svgrepo-com.svg" alt="telegram">
+                    </a>
+                </div>
+                
+                   
+            </div>
+            
+        </header>
+        
+        <div class="ghost"></div>
+
+        <main class="main">
+            <div class="container">
+                <div class="about">
+                    <h3 style="margin-left: 75px;">
+                        кто??? Начинающий <a href="/KURSACH/index.html">фронтендер.</a> 
+                    </h3>
+                    <img class="emoji" draggable="true" src="/KURSACH/imgs/thinking-emoji.gif" alt="thinking-emoji">
+                    
+                    <div class="fuuu">
+                        <h3>
+                            даже <a href="https://t.me/etheegpnk">музыку</a> иногда пишу
+                        </h3>
+                        
+                        <h3 style="margin-left: 75px;" class="about-butt">
+                            А <a href="mailto:michaelzz2004@gmail.com">тут </a> можно Написать мне
+                        </h3>
+    
+                    </div>
+                    
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <nav class="footer__menu">
+                    <section class="footer__menu-space">
+                        <p class="footer__menu-titlle">
+                            МЕНЮ
+                        </p>
+                        
+                        <ul class="footer__menu-listing">
+                            <li class="footer__menu-list">
+                                <a href="#" class="footer__menu-link">
+                                    Главная
+                                </a>
+                            </li>
+                            <li class="footer__menu-list">
+                                <a href="#" class="footer__menu-link">
+                                    Портфолио
+                                </a>
+                            </li>
+                            <li class="footer__menu-list">
+                                <a href="#" class="footer__menu-link">
+                                    Цены
+                                </a>
+                            </li>
+                            <li class="footer__menu-list">
+                                <a href="#" class="footer__menu-link">
+                                    Узнать стоимость сайта
+                                </a>
+                            </li>
+                            <li class="footer__menu-list">
+                                <a href="#" class="footer__menu-link">
+                                    Отзывы
+                                </a>
+                            </li>
+                            <li class="footer__menu-list">
+                                <a href="#" class="footer__menu-link">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="footer__logo">
+                        <h1 class="logo">
+                            YaSinHi
+                        </h1>
+                    </section>
+                        
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <form class="modal" id="modal">
+
+        <a onclick="closeModalBox()" class="polos"></a>
+
+        <h2 class="work-title">
+            обратная связь
+        </h2>
+    
+        <label>
+            <span>Ваше имя:</span>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Спайдер Мен"
+                required
+                autofocus
+            >
+        </label>
+        
+        <label>
+            <span>Почта:</span>
+            <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="spider@man.pro"
+                required
+            >
+        </label>
+        
+        <label class="question-tab">
+            <span>Опишите ваш вопрос:</span>
+            <input
+                type="text"
+                name="text"
+                id="question"
+                placeholder="Вопрос"
+                required
+                autofocus
+            >
+        </label>
+        
+        <button type="submit" class="submit">Отправить заявку</button>
+         
+    </form>
+
+    <div class="calculator inactive">
+        <div class="calc__body obolochka">
+            <div class="switch-box">
+                <h4 class="switch-box-titlle">
+                    какой тип сайта вам нужен?
+                </h4>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">Лендинг</span>
+                </div>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">Сайт-визитка</span>
+                </div>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">Интернет магазин</span>
+                </div>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">Редизайн существующего сайта</span>
+                </div>
+                
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">Портал</span>
+                </div>
+            </div>
+            <div class="switch-box">
+                <h4 class="switch-box-titlle">
+                    описание целей и задач
+                </h4>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">есть подробное тз</span>
+                </div>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">есть понимание конечного результата</span>
+                </div>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">требуется помощь в создании тз с нуля</span>
+                </div>
+            </div>
+            <div class="switch-box">
+                <h4 class="switch-box-titlle">
+                    Дизайн сайта
+                </h4>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">Уникальный</span>
+                </div>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">Шаблонный</span>
+                </div>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">Редизайн сайта</span>
+                </div>
+                <div class="switch-box-box">
+                    <label class="switch">
+
+                        <input class="checkbox" type="checkbox">
+                        <span class="slider round"></span>
+                        
+                    </label>
+                    <span class="checkbox-text">Дизайн уже есть</span>
+                </div>
+            </div>
+        </div>
+
+        <aside class="calc__aside">
+            <h2 class="cena-site">
+                Стоимость <br><span id="cena">0</span>₽
+            </h2>
+            <form class="pochta" >
+                <h3>обратная связь</h3>
+                <input type="email"
+                name="email"
+                id="email"
+                placeholder="spider@man.pro"
+                required 
+                type="text">
+
+                <button type="submit" class="calc__submit">Отправить заявку</button>
+            </form>
+        </aside>
+    </div>
+    <div class="overlay" onclick="closeModalBox()" id="overlay-modal"></div>
+    
+    <script src="script.js"></script>
+    <script src="script-2.js"></script>
+</body>
+</html>
