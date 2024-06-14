@@ -288,9 +288,7 @@ body{
     background-color: transparent;
 }
 
-.about .about-me{
-    margin-top: 25px;
-}
+
 
 .about-me{
     margin-top: 75px;
@@ -302,6 +300,11 @@ body{
     font-size: 25px;
     background-color:rgba(255, 255, 255, 0.405);
 }
+
+.about .about-me{
+    margin-top: 10px;
+}
+
 .deledda{
     font-family: 'Deledda';
 }
