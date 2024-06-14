@@ -288,6 +288,10 @@ body{
     background-color: transparent;
 }
 
+.about .about-me{
+    margin-top: 25px;
+}
+
 .about-me{
     margin-top: 75px;
     margin-left: auto;
