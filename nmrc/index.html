@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width", initial-scale=1>
     <title>Document</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -74,7 +74,15 @@
 
         <div class="wrapper">
             <nav class="header__nav">
-                <ul>
+
+                <div class="burger__container">
+                    <div onclick="BurgerClicked()" class="header__nav-burger">
+                        <span></span>
+                    </div>    
+                </div>
+                
+
+                <ul class="header__nav-menu">
                     <li>
                         <a href="https://nmrc.ru/patsientam/">ПАЦИЕНТАМ</a>
                         <ul></ul>
@@ -363,7 +371,13 @@
                 <div class="footer__contactscontainer second">
                     <div class="footer__contactscontainer-addres">
                         <p>
-                            Москва, ул. Достоевского, дом 4, корпус 2
+                            Москва, ул. Достоевского,
+                        </p>
+
+                        <br>
+
+                        <p> 
+                            дом 4, корпус 2
                         </p>
                     </div>
 

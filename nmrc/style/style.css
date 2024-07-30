@@ -9,8 +9,12 @@ html {
     scroll-behavior: smooth;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 hr {
-    border-top: 1px solid #23398d;
+    border-top: 1px solid rgb(93, 114, 175);
 }
 
 ::selection{
@@ -40,11 +44,202 @@ p {
 
 body {
     top: 0 !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
     font-family: 'Inter';
     font-weight: 400;
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    line-height: 1.4;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width:1200px) {
+    
+    .header__first-links {
+        flex-direction: column !important;
+        justify-content: space-between;
+    }
+
+    .header__first-links-center,
+    .header__first-links-filial {
+        padding: 13px 35px;
+        align-self: flex-end;
+    }
+    
+}
+
+@media (max-width:1024px) {
+
+    .header__about {
+        grid-template-columns: repeat(4, 1fr) !important;
+        grid-template-rows: 3fr 1fr;
+    }
+
+    .header__about-app {
+        grid-column: span 4;
+    }
+
+    .footer__listinfo,
+    .footer__contacts {
+        gap: 20px !important;
+    }
+
+    .header__nav {
+        overflow: hidden;
+    }
+
+    .header__nav-menu {
+        flex-direction: column !important;
+        align-items: center;
+        top: 100px;
+        transition: .3s ease 0s;
+    }
+
+    .header__nav {
+        height: 60px;
+        transition: .3s ease 0s;
+    }
+
+    .header__nav.active {
+        height:fit-content;
+    }
+
+    .header__nav-menu.active {
+        top: 0;
+        transition: .3s ease 0s;
+    }
+    
+    .burger__container {
+        padding: 20px 0;
+        background-color: white;
+        z-index: 3;
+    }
+
+    .header__nav-burger {
+        display: block !important;
+        position: relative;
+        width: 60px;
+        height: 20px;
+        margin: 0 auto;
+        z-index: 4;
+    }
+    
+    .header__nav-burger::before,
+    .header__nav-burger::after,
+    .header__nav-burger span {
+        content: '';
+        background-color: var(--color-orig-blue);
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        left: 0;
+        transition: .3s ease 0s;
+    }
+
+    .header__nav-burger span {
+        top: 8px;
+    }
+
+    .header__nav-burger.active span {
+        transform: scale(0);
+    }
+
+    .header__nav-burger::before {
+        top: 0;
+    }
+    
+    .header__nav-burger.active::before {
+        transform: rotate(18deg);
+        top: 8px;
+    }
+
+    .header__nav-burger::after {
+        bottom: 0;
+    }
+
+    .header__nav-burger.active::after {
+        transform: rotate(-18deg);
+        top: 8px;
+    }
+
+}
+
+@media (max-width:773px) {
+    .wrapper {
+        padding: 0 30px !important;
+    }
+
+    .header__first {
+        opacity: 0;
+        min-height: 0 !important;
+        height: 0;
+    }
+
+    .header__about {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        font-weight: 200;
+    }
+
+    .header__about-app,
+    .header__about-appointment {
+        width: 95% !important;
+    }
+    .header__about-app {
+        margin-top: 40px;
+    }
+
+    .header__about img {
+        width: 200px !important;
+    }
+
+    .footer__listinfo {
+        display: flex !important;
+        flex-direction: column;
+        text-align: left;
+    }
+    
+    .footer__listcontainer {
+        padding-top: 20px;
+    }
+
+    .last {
+        margin-top: 20px;
+    }
+
+    .last a{
+        align-self: flex-start !important;
+    }
+
+    .footer__contacts {
+        margin-top: 40px;
+        display: flex !important;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .footer__copyright {
+        display: flex !important;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .main__alpha-pop-container {
+        display: flex !important;
+        flex-direction: column;
+        text-align: left;
+    }
+    
 }
 
 .skiptranslate {
@@ -76,11 +271,7 @@ h3,
     transition: .3s;
 }
 
-.wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
+
 
 .language__img {
     cursor: pointer;
@@ -90,6 +281,7 @@ h3,
 .header__first {
     display: grid;
     grid-template-columns: 1.5fr 2.6fr 2.5fr;
+    min-height: 56px;
 }
 
 .header__first-links {
@@ -109,20 +301,23 @@ h3,
 
 .header__first-links-center a,
 .header__first-links-filial a {
-    padding: 13px 35px;
     font-size: 13px;
+    width: fit-content;
 }
 
-.header__first {
-    min-height: 56px;
+.header__first-links-center,
+.header__first-links-filial {
+    padding: 13px 35px;
 }
 
 .header__about {
     display: grid;
+    min-height: 194px;
     grid-template-columns: 1.1fr 1.1fr 1.3fr 1fr 1.4fr;
     grid-auto-rows: minmax(132px, auto);
     align-items: center;
-    padding: 32px 0;
+    padding: 15px 0;
+    gap: 10px;
 }
 
 .header__about-consultmorn a,
@@ -152,6 +347,7 @@ h3,
     color: white;
     font-size: 15px;
     white-space: nowrap;
+    margin: 0 auto;
 }
 
 .header__about-appointment:hover {
@@ -161,9 +357,10 @@ h3,
 
 .header__about-app {
     justify-self: center;
+    display: flex;
 }
 
-.header__nav ul {
+.header__nav-menu {
     position: relative;
     width: 100%;
     display: flex;
@@ -171,7 +368,11 @@ h3,
     justify-content: space-between;
 }
 
-.header__nav ul li {
+.header__nav-burger {
+    display: none;
+}
+
+.header__nav-menu li {
     position: relative;
     list-style: none;
     min-height: 46px;
@@ -180,12 +381,12 @@ h3,
 
 }
 
-.header__nav ul li a{
+.header__nav-menu li a{
     font-size: 14px;
     padding: 13px 45px;
 }
 
-.header__nav ul li :hover{
+.header__nav-menu li :hover{
     border-bottom: 3px solid rgb(13, 13, 139);
 }
 
@@ -210,12 +411,7 @@ footer a {
     grid-template-columns: 3fr 3fr 2.3fr 1.5fr;
     padding-top: 45px;
     margin-bottom: 45px;
-}
-
-.first,
-.second,
-.third {
-    padding-right: 54px;
+    gap: 54px;
 }
 
 .last {
@@ -227,7 +423,7 @@ footer a {
 .last a{
     align-self: flex-end;
     width: fit-content;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .last h3{
@@ -243,7 +439,7 @@ footer a {
 
 .footer__lisrcontainer-button {
     border-bottom: 2px solid white;
-    width: fit-content;
+    max-width: fit-content;
     padding: 10px 3px;
     align-content: center;
     justify-content: center;
@@ -258,6 +454,10 @@ h3 {
     padding-top: 10px;
 }
 
+.last a h3 {
+    white-space: nowrap;
+}
+
 .footer__listcontainer-list li {
     padding-top: 8px;
 }
@@ -266,6 +466,7 @@ h3 {
     display: grid;
     grid-template-columns: 3fr 3fr 2.3fr 1.5fr;
     margin-bottom: 50px;
+    gap: 54px;
 }
 
 .footer__contactscontainer-addres p {
@@ -371,8 +572,6 @@ h3 {
     padding: 8px 12px;
     font-size: 16px;
     border: 0;
-    min-width: 0;
-    max-width: 100%;
     border-right: transparent;
     border-radius: 6px 0 0 6px;
     line-height: 1.5;
