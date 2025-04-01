@@ -1,0 +1,445 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  /*outline: 1px solid red;*/
+}
+
+
+body::-webkit-scrollbar {
+  width: 12px;               /* ширина scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: rgba(97, 97, 97, 0);        /* цвет дорожки */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(212, 212, 212,0.3);    /* цвет плашки */
+  border-radius: 20px;       /* закругления плашки */
+}
+
+
+@font-face {
+  font-family: 'msrt-md';
+  src: url(./Montserrat/Montserrat-Medium.ttf)
+}
+
+@font-face {
+  font-family: 'msrt-mdit';
+  src: url(./Montserrat/Montserrat-MediumItalic.ttf)
+}
+
+@font-face {
+  font-family: 'msrt-bd';
+  src: url(./Montserrat/Montserrat-Bold.ttf)
+}
+
+:root {
+  --global-width-padding: 32px;
+  --header-height: 60px;
+  --logo-grey: rgb(72, 72, 72);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.main-width-wrapper {
+  z-index: 24;
+  max-width: 1324px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 16px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'msrt-md';
+  font-weight: 500;
+  font-size: 1rem;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  /*background-color: rgba(55, 55, 55, 0.1);*/
+  padding: 0 var(--global-width-padding);
+  width: 100vw;
+  /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);*/
+  z-index: 30;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+}
+
+.nav__item {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  transition: all .2s ease-in;
+  &:hover {
+    background-color: rgba(45, 45, 45, 0.2);
+  }
+
+  &>a {
+    padding: 16px 24px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+  }
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+
+  & span{
+    font-family: 'msrt-bd';
+    color: rgb(0, 0, 0);
+    font-size: 20px
+  }
+
+  & span:last-child {
+    padding: 0;
+    background-image:linear-gradient(119deg,rgb(103, 103, 103),rgb(33, 33, 33));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;  
+  }
+}
+
+
+
+
+/*******main__first*******/
+
+main {
+  flex-grow: 1;
+  flex: 1 0 auto;
+}
+
+.main__first {
+  min-height: calc(100vh);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: url(./imgs/DALL·E\ 2025-03-27\ 23.44.12\ -\ A\ realistic\ mountain\ landscape\,\ designed\ for\ a\ professional\ website\ background.\ The\ scene\ features\ natural\,\ well-lit\ mountains\ with\ green\ valleys\ and\ .webp);
+  background-repeat: no-repeat;
+  background-position: unset;
+  background-size: cover;
+
+  position: relative;
+  /*user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    */
+}
+
+.first__content {
+  padding-top: var(--header-height);
+  border-radius: 4px;
+  margin-top: -120px;
+}
+
+.first__content h1 {
+  color: rgb(99, 99, 99);
+  font-weight: 600;
+  font-size: 29px;
+  width: fit-content;
+  & span {
+    font-family: 'msrt-bd';
+    color: rgb(0, 0, 0);
+    font-size: 120px
+  }
+
+  & span:last-child {
+    padding: 0;
+    background-image:linear-gradient(119deg,rgb(103, 103, 103),rgb(33, 33, 33));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;  
+  }
+}
+
+
+
+/**********main_second***********/
+
+.main__about-background {
+  background: black;
+}
+
+.main__about {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  background: white;
+  backdrop-filter: blur(10px);
+  border-radius: 32px;
+  color: rgb(0, 0, 0);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 22fr 10fr;
+  column-gap: 48px;
+}
+
+.about__h2 h2 {
+  padding-bottom: 32px;
+  font-size: 30px;
+}
+
+.about__info {
+  padding-top: 16PX;
+}
+
+.info-list {
+  display: grid;
+  row-gap: 24px;
+}
+
+.info-item {
+  display: flex;
+  column-gap: 8px;
+}
+
+.info-label {
+  font-family: 'msrt-mdit';
+  color: var(--logo-grey);
+}
+
+.info-value {
+  text-align: start;
+}
+
+
+.about__services {
+  padding: 32px;
+  border-radius: 32px;
+  background-image:linear-gradient(119deg,rgb(134, 134, 134),rgb(27, 27, 27));
+
+  -webkit-box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
+
+  color: white;
+  max-height: min-content;
+}
+
+.services__title {
+  padding-bottom: 24px;
+  font-size: 1.25rem;
+}
+
+.services-list {
+  display: grid;
+  grid-auto-rows: auto;
+}
+
+.service-card {
+  & + .service-card {
+    padding-top: 24px;
+  }
+}
+
+.service-title {
+  display: flex;
+  align-items: center;
+  padding-bottom: 6px;
+  column-gap: 4px;
+
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.service-description {
+  display: none;
+}
+
+/***********main__info***********/
+
+.main__info {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  
+
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+}
+
+.info__h2 h2 {
+  padding-bottom: 32px;
+  font-size: 30px;
+}
+
+.declaration-p + .declaration-p{
+  font-family: 'msrt-mdit';
+  margin-top: 24px;
+}
+
+
+.info__statement {
+  margin-top: 32px;
+  padding: 32px;
+  border-radius: 32px;
+  background-image:linear-gradient(119deg,rgb(82, 82, 82),rgb(27, 27, 27));
+
+  -webkit-box-shadow: 4px 4px 15px -1px rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: 4px 4px 15px -1px rgba(255, 255, 255, 0.4);
+  box-shadow: 4px 4px 15px -1px rgba(255, 255, 255, 0.4);
+
+  color: white;
+  max-width: fit-content;
+  max-height: min-content;
+}
+
+
+.statements-list {
+  display: grid;
+  grid-auto-rows: auto;
+}
+
+.statement-card {
+  & + .statement-card {
+    padding-top: 24px;
+  }
+}
+
+.statement-title {
+  display: flex;
+  align-items: center;
+  padding-bottom: 6px;
+  column-gap: 12px;
+
+  cursor: pointer;
+}
+
+.statement-description {
+  display: none;
+}
+
+
+
+/************footer************/
+
+footer {
+  flex: 0 0 auto;
+  border-radius: 32px 32px 0px 0px;
+  background-image: linear-gradient(-228deg,rgb(164, 164, 164),rgb(242, 242, 242));
+  height: 150px;
+}
+
+
+
+/**************adaptive*************/
+
+@media (max-width: 1024px) {
+  .first__content h1 {
+    font-size: 20px;
+    & span {
+      font-size: 100px
+    }
+  }
+
+  .main-width-wrapper {
+    max-width: 960px;
+  }
+
+  .about__grid {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+  }
+
+  .berger {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    & span {
+      width: 24px;
+      height: 3px;
+      border-radius: 10px;
+      background-color: black;
+    }
+  }
+
+  .nav__item {
+    display: none;
+  }
+}
+
+@media (max-width: 754px) {
+  .first__content h1 {
+    font-size: 18px;
+    & span {
+      font-size: 86px
+    }
+  }
+
+  :root {
+    --global-width-padding: 16px;
+  }
+
+  .st0 {
+    display: none;
+  }
+
+  .info-item {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 650px) {
+  .first__content h1 {
+    font-size: 14px;
+    & span {
+      font-size: 72px
+    }
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  :root {
+    --global-width-padding: 12px;
+  }
+}
+
+@media (max-width: 350px) {
+  h2 {
+    font-size: 6px;
+  }
+}
