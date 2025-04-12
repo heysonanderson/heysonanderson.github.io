@@ -12,7 +12,7 @@ body::-webkit-scrollbar {
   width: 12px;               /* ширина scrollbar */
 }
 body::-webkit-scrollbar-track {
-  background: rgba(97, 97, 97, 0);        /* цвет дорожки */
+  background: rgb(59, 59, 59);        /* цвет дорожки */
 }
 body::-webkit-scrollbar-thumb {
   background-color: rgba(212, 212, 212,0.3);    /* цвет плашки */
@@ -37,7 +37,7 @@ body::-webkit-scrollbar-thumb {
 
 :root {
   --global-width-padding: 32px;
-  --header-height: 60px;
+  --header-height: 80px;
   --logo-grey: rgb(72, 72, 72);
 }
 
@@ -47,7 +47,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 
@@ -56,11 +56,13 @@ a {
   max-width: 1324px;
   width: 100%;
   margin: 0 auto;
-  padding: 0px 16px;
+  padding: 64px 32px;
+  padding-bottom: 0;
 }
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -75,16 +77,16 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   overflow-x: hidden;
 }
 
 header {
   position: fixed;
-  /*background-color: rgba(55, 55, 55, 0.1);*/
+  background-color: rgba(0, 0, 0, 1);
   padding: 0 var(--global-width-padding);
   width: 100vw;
-  /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);*/
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
   z-index: 30;
 }
 
@@ -107,10 +109,11 @@ header {
   justify-items: center;
   transition: all .2s ease-in;
   &:hover {
-    background-color: rgba(45, 45, 45, 0.2);
+    background-color: rgba(83, 83, 83, 0.2);
   }
 
   &>a {
+    color: white;
     padding: 16px 24px;
     text-align: center;
     transition: all .3s ease-in-out;
@@ -123,13 +126,13 @@ header {
 
   & span{
     font-family: 'msrt-bd';
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 20px
   }
 
   & span:last-child {
     padding: 0;
-    background-image:linear-gradient(119deg,rgb(103, 103, 103),rgb(33, 33, 33));
+    background-image:linear-gradient(119deg,rgb(255, 255, 255),rgb(137, 137, 137));
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;  
@@ -152,8 +155,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
-  background: url(./imgs/DALL·E\ 2025-03-27\ 23.44.12\ -\ A\ realistic\ mountain\ landscape\,\ designed\ for\ a\ professional\ website\ background.\ The\ scene\ features\ natural\,\ well-lit\ mountains\ with\ green\ valleys\ and\ .webp);
+  /*
+  background: url(./imgs/DALL·E\ 2025-03-27\ 23.42.44\ -\ A\ breathtaking\ mountain\ landscape\ with\ a\ bright\ and\ warm\ color\ palette.\ The\ mountains\ are\ rugged\ and\ detailed\,\ with\ more\ greenery\ on\ the\ slopes\ and\ va.webp);
+  */
   background-repeat: no-repeat;
   background-position: unset;
   background-size: cover;
@@ -166,29 +172,62 @@ main {
     */
 }
 
+#the_rock {
+  position: absolute;
+  background-image: url(./imgs/Rock2.png);
+  width: 1024px;
+  height: 1024px;
+  background-size: 100% 100%;
+  top: 70%;
+  left: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 13; /* под заголовком и кругом */
+  pointer-events: none; /* чтобы не мешала интерактиву */
+}
+
 .first__content {
+  position: relative;
   padding-top: var(--header-height);
   border-radius: 4px;
   margin-top: -120px;
+  width: fit-content;
+}
+
+
+#circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30vw; /* адаптивный размер круга */
+  height: 30vw; /* сохраняем пропорции */
+  max-width: 500px; /* адаптивный размер круга */
+  max-height: 500px; /* сохраняем пропорции */
+  transform: translate(-50%, -40%); /* центрирование */
+  border-radius: 50%;
+  border: 1vw solid rgb(79, 79, 79); /* адаптивная толщина границы */
+  z-index: 10;
 }
 
 .first__content h1 {
-  color: rgb(99, 99, 99);
+  position: relative;
+  z-index: 15;
+  color: rgb(255, 255, 255);
   font-weight: 600;
   font-size: 29px;
   width: fit-content;
+  font-family: 'msrt-mdit';
+  width: fit-content;
   & span {
     font-family: 'msrt-bd';
-    color: rgb(0, 0, 0);
-    font-size: 120px
+    color: rgb(255, 255, 255);
+    font-size: 120px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
   }
 
   & span:last-child {
     padding: 0;
-    background-image:linear-gradient(119deg,rgb(103, 103, 103),rgb(33, 33, 33));
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;  
   }
 }
 
@@ -205,7 +244,7 @@ main {
   padding-bottom: 64px;
   background: white;
   backdrop-filter: blur(10px);
-  border-radius: 32px;
+  /***border-radius: 32px;****/
   color: rgb(0, 0, 0);
 }
 
@@ -246,14 +285,14 @@ main {
 
 .about__services {
   padding: 32px;
-  border-radius: 32px;
-  background-image:linear-gradient(119deg,rgb(134, 134, 134),rgb(27, 27, 27));
+  border-radius: 16px;
+  /*background-image:linear-gradient(119deg,rgb(134, 134, 134),rgb(27, 27, 27));*/
 
   -webkit-box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
   box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
 
-  color: white;
+  color: rgb(0, 0, 0);
   max-height: min-content;
 }
 
@@ -311,16 +350,18 @@ main {
 
 
 .info__statement {
-  margin-top: 32px;
-  padding: 32px;
-  border-radius: 32px;
-  background-image:linear-gradient(119deg,rgb(82, 82, 82),rgb(27, 27, 27));
+  margin-top: 64px;
+  padding: 48px 32px;
+  border-radius: 16px;
+  /*background-image:linear-gradient(119deg,rgb(134, 134, 134),rgb(27, 27, 27));*/
 
-  -webkit-box-shadow: 4px 4px 15px -1px rgba(255, 255, 255, 0.4);
-  -moz-box-shadow: 4px 4px 15px -1px rgba(255, 255, 255, 0.4);
-  box-shadow: 4px 4px 15px -1px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
 
-  color: rgb(255, 255, 255);
+  border: 1px solid rgb(103, 103, 103);
+  color: rgb(0, 0, 0);
+  max-height: min-content;
   max-width: fit-content;
   max-height: min-content;
 }
@@ -400,7 +441,7 @@ footer {
   }
 }
 
-@media (max-width: 754px) {
+@media (max-width: 785px) {
   .first__content h1 {
     font-size: 18px;
     & span {
@@ -419,9 +460,13 @@ footer {
   .info-item {
     flex-direction: column;
   }
+
+  #circle {
+    display: none;
+  }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 685px) {
   .first__content h1 {
     font-size: 14px;
     & span {
