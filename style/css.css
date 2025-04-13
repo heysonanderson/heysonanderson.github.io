@@ -83,11 +83,10 @@ body {
 
 header {
   position: fixed;
-  background-color: rgba(0, 0, 0, 1);
   padding: 0 var(--global-width-padding);
   width: 100vw;
-  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
   z-index: 30;
+  /*background: #21a8e7;*/
 }
 
 .header__nav {
@@ -109,7 +108,7 @@ header {
   justify-items: center;
   transition: all .2s ease-in;
   &:hover {
-    background-color: rgba(83, 83, 83, 0.2);
+    background-color: rgba(169, 169, 169, 0.2);
   }
 
   &>a {
@@ -123,19 +122,10 @@ header {
 .nav__logo {
   display: flex;
   align-items: center;
-
   & span{
     font-family: 'msrt-bd';
     color: rgb(255, 255, 255);
     font-size: 20px
-  }
-
-  & span:last-child {
-    padding: 0;
-    background-image:linear-gradient(119deg,rgb(255, 255, 255),rgb(137, 137, 137));
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;  
   }
 }
 
@@ -151,7 +141,27 @@ main {
 
 .main__first {
   min-height: calc(100vh);
-
+  background: 
+  radial-gradient(
+    circle at 65% 25%,
+    rgba(255, 255, 255, 0.06) 0%,
+    transparent 50%
+  ),
+  repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 2px,
+    transparent 6px,
+    transparent 12px
+  ),
+  linear-gradient(
+    to top,
+    #c7e7ff 0%,      /* утренний свет */
+    #a6ddff 20%,     /* живой, чистый голубой */
+    #6bb6e9 50%,     /* насыщенно-средне-голубой */
+    #428fcf 75%,     /* глубокий небесный тон */
+    #2c6fae 100%     /* контрастный фон для белого */
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,6 +207,7 @@ main {
 
 
 #circle {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -206,8 +217,9 @@ main {
   max-height: 500px; /* сохраняем пропорции */
   transform: translate(-50%, -40%); /* центрирование */
   border-radius: 50%;
-  border: 1vw solid rgb(79, 79, 79); /* адаптивная толщина границы */
+  border: 1vw solid 	rgb(131,131,60); /* адаптивная толщина границы */
   z-index: 10;
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.2);
 }
 
 .first__content h1 {
@@ -223,7 +235,7 @@ main {
     font-family: 'msrt-bd';
     color: rgb(255, 255, 255);
     font-size: 120px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
   }
 
   & span:last-child {
@@ -359,7 +371,6 @@ main {
   -moz-box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
   box-shadow: 4px 4px 15px -1px rgba(0, 0, 0, 0.4);
 
-  border: 1px solid rgb(103, 103, 103);
   color: rgb(0, 0, 0);
   max-height: min-content;
   max-width: fit-content;
